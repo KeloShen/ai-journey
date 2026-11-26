@@ -15,6 +15,17 @@ Curated conversations I've had with AI tools, and an automatically generated sum
 
 Files starting with `_` and files with `draft: true` are ignored.
 
+## Automatic privacy check
+
+Every push runs `scripts/privacy_check.py` before anything else. It scans `chats/` for email addresses, phone numbers (CN and international), Chinese ID numbers, API keys and tokens (OpenAI/DeepSeek/Anthropic, GitHub, AWS, Google, Slack), private keys, passwords, URLs with credentials, and private IP addresses.
+
+If it finds something:
+- the run **fails** and `summary.json` is **not** updated;
+- **GitHub emails you** (the person who pushed). Make sure *Settings → Notifications → Actions* has email turned on;
+- the log lists file, line and type only, with the value masked, because logs of a public repo are public too.
+
+Important: by the time the check runs, the file is already public on GitHub. The check is a safety net, not a substitute for the checklist below. When it fires, edit or delete the file right away. False positive? Add the exact text to `scripts/privacy_allowlist.txt`.
+
 ## Redaction checklist (this repo is public)
 
 Before publishing, remove or replace:

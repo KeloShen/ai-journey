@@ -3,7 +3,7 @@ name: Update summary
 on:
   push:
     branches: [main]
-    paths: ["chats/**", "scripts/summarize.py"]
+    paths: ["chats/**", "scripts/**"]
   workflow_dispatch:   # lets you re-run it by hand from the Actions tab
 
 permissions:
@@ -17,6 +17,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      # Fails the run if anything sensitive is found -> GitHub emails you,
+      # and the steps below are skipped, so summary.json is not updated.
+      - name: Privacy check
+        run: python scripts/privacy_check.py
       - name: Build summary.json
         env:
           LLM_API_KEY: ${{ secrets.LLM_API_KEY }}

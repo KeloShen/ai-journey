@@ -1,0 +1,3 @@
+# Text the privacy check should ignore (exact text, one per line).
+# My public contact address (it's on my website anyway):
+KunxiangShen@outlook.com
