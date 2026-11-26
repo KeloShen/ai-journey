@@ -72,22 +72,28 @@ def call_llm(prompt):
     if provider == "anthropic":
         req = urllib.request.Request(
             "https://api.anthropic.com/v1/messages",
-            data=json.dumps({"model": model, "max_tokens": 2000, "messages": [{"role": "user", "content": prompt}]}).encode(),
+            data=json.dumps({"model": model, "max_tokens": 4000, "messages": [{"role": "user", "content": prompt}]}).encode(),
             headers={"content-type": "application/json", "x-api-key": key, "anthropic-version": "2023-06-01"},
         )
-        with urllib.request.urlopen(req, timeout=120) as r:
+        with urllib.request.urlopen(req, timeout=300) as r:
             data = json.load(r)
         return "".join(b.get("text", "") for b in data.get("content", []))
     base = (os.environ.get("LLM_BASE_URL") or "https://api.deepseek.com/v1").rstrip("/")
     req = urllib.request.Request(
         f"{base}/chat/completions",
-        data=json.dumps({"model": model, "max_tokens": 2000, "temperature": 0.4,
+        # reasoning models (e.g. deepseek-v4-pro) "think" first and need a generous budget
+        data=json.dumps({"model": model, "max_tokens": 16000, "temperature": 0.4,
                          "messages": [{"role": "user", "content": prompt}]}).encode(),
         headers={"content-type": "application/json", "authorization": f"Bearer {key}"},
     )
-    with urllib.request.urlopen(req, timeout=120) as r:
+    with urllib.request.urlopen(req, timeout=300) as r:
         data = json.load(r)
-    return data["choices"][0]["message"]["content"]
+    choice = data["choices"][0]
+    content = choice["message"].get("content") or ""
+    if not content.strip():
+        print(f"LLM returned an empty answer (finish_reason={choice.get('finish_reason')}, "
+              f"reasoning chars={len(choice['message'].get('reasoning_content') or '')})", file=sys.stderr)
+    return content
 
 
 def ai_summary(chats, topics):
@@ -119,12 +125,13 @@ LOGS:
         print(f"LLM call failed: {e}", file=sys.stderr)
         return None
     if not text:
+        print("No AI summary: empty response", file=sys.stderr)
         return None
     m = re.search(r"\{.*\}", text, re.S)
     try:
         return json.loads(m.group(0)) if m else None
     except json.JSONDecodeError:
-        print("LLM returned invalid JSON; skipping AI summary", file=sys.stderr)
+        print(f"LLM returned invalid JSON; skipping AI summary. Start of reply: {text[:300]!r}", file=sys.stderr)
         return None
 
 
