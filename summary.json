@@ -2,40 +2,35 @@
   "updated": "2026-11-26",
   "totalChats": 1,
   "headline": {
-    "en": "I use AI as a demanding one-on-one tutor: I paste my own broken code and ask why, and it keeps a structured notebook of questions, mistakes, and weak spots. Across 81 Q&As and 65 logged mistakes, it helped me turn recurring Python/OOP errors into checklists and work through core LeetCode patterns.",
-    "zh": "我把 AI 当作严格的一对一导师：贴出自己写坏的代码并追问“为什么”，还让它维护结构化笔记，记录问题、错题和薄弱点。81 次问答、65 条错题记录中，它帮我把反复出现的 Python/OOP 错误变成检查清单，并系统过了一遍核心 LeetCode 模式。",
-    "de": "Ich nutze KI als strengen Einzeltutor: Ich füge meinen eigenen fehlerhaften Code ein und frage nach dem Warum, und sie führt ein strukturiertes Notizbuch mit Fragen, Fehlern und Schwachstellen. In 81 Q&As und 65 erfassten Fehlern half sie mir, wiederkehrende Python-/OOP-Fehler in Checklisten zu verwandeln und zentrale LeetCode-Muster durchzuarbeiten."
+    "en": "I use Claude as a structured AI tutor: I ask 'why' rather than for answers, paste my own buggy code, and have it maintain a mistake log and weak-point list. This helped me work through 81 Q&As and 65 logged mistakes while studying Python, data structures, algorithms, and OOP on LeetCode.",
+    "zh": "我把 Claude 当作结构化 AI 导师：不问答案只问“为什么”，粘贴自己的 bug 代码，并让它维护错题本和薄弱点清单。它帮我完成了 81 次问答、记录了 65 个错误，同时学习 Python、数据结构与算法、OOP 和 LeetCode。",
+    "de": "Ich nutze Claude als strukturierten KI-Tutor: Ich frage nach dem 'Warum' statt nach Antworten, füge meinen eigenen fehlerhaften Code ein und lasse ein Fehlerprotokoll und eine Schwachstellenliste führen. Es half mir, 81 Fragen zu bearbeiten und 65 Fehler zu protokollieren, während ich Python, Datenstrukturen, Algorithmen und OOP auf LeetCode lernte."
   },
   "learned": [
     {
-      "en": "Asking “why” instead of asking for finished code exposed my actual misconceptions; keeping a structured mistake log made recurring errors visible.",
-      "zh": "学会用“为什么”而不是直接要答案：贴自己的错误代码并让 AI 维护错题本，我才真正看到反复卡住的地方。",
-      "de": "Nach dem Warum zu fragen statt fertigen Code zu verlangen, legte meine tatsächlichen Missverständnisse offen; ein strukturiertes Fehlerlog machte wiederkehrende Fehler sichtbar."
+      "en": "I learned Python's assignment semantics more deeply: b = a moves a name label, shallow copy creates a new container with shared elements, and list * n copies references, not objects.",
+      "zh": "我更深入地理解了 Python 的赋值语义：b = a 只是移动名字标签，浅拷贝会创建新容器但共享元素，而 list * n 复制的是引用而不是对象。",
+      "de": "Ich habe die Zuweisungssemantik von Python besser verstanden: b = a verschiebt nur ein Namensschild, eine flache Kopie erzeugt einen neuen Container mit geteilten Elementen, und list * n kopiert Referenzen statt Objekte."
     },
     {
-      "en": "I learned Python assignment and reference semantics: `=` rebinds a name, shallow copies create a new container with shared elements, and `list * n` copies references, not independent objects.",
-      "zh": "理解了 Python 赋值与引用语义：`=` 只是换名字/换地址，浅拷贝是新容器共享元素，`list * n` 复制的是引用而不是独立对象。",
-      "de": "Ich verstand Pythons Zuweisungs- und Referenzsemantik: `=` bindet nur einen Namen neu, flache Kopien erzeugen einen neuen Container mit geteilten Elementen, und `list * n` kopiert Referenzen statt unabhängiger Objekte."
+      "en": "I learned to detect and fix off-by-one errors by keeping track of whether ranges are closed or half-open, and where a pointer stops after a while loop.",
+      "zh": "我学会了通过区分闭区间和左闭右开区间、跟踪 while 退出后指针停在哪里，来排查和修复 off-by-one 错误。",
+      "de": "Ich habe gelernt, Off-by-one-Fehler zu erkennen und zu beheben, indem ich darauf achte, ob Intervalle geschlossen oder halboffen sind und wo ein Zeiger nach einer While-Schleife stoppt."
     },
     {
-      "en": "I learned that values changing each iteration must be initialized inside the loop, and I now check interval boundaries and off-by-one cases deliberately.",
-      "zh": "认识到每轮都会变化的量必须写在循环里；闭区间/左闭右开、最后下标与 range 终点等边界要专门核对。",
-      "de": "Ich lernte, dass sich pro Iteration ändernde Werte innerhalb der Schleife initialisiert werden müssen, und prüfe Intervallgrenzen und Off-by-one-Fälle jetzt bewusst."
+      "en": "I learned to maintain a mistake log and a weak-point list, and to revisit recurring mistakes such as missing self., missing parentheses, and using Optional(...) instead of Optional[...] until they disappear.",
+      "zh": "我学会了维护错题本和薄弱点清单，并反复回看反复出现的错误，例如漏掉 self.、漏掉括号、以及把 Optional[...] 写成 Optional(...)，直到不再犯。",
+      "de": "Ich habe gelernt, ein Fehlerprotokoll und eine Schwachstellenliste zu führen und wiederkehrende Fehler wie fehlendes self., fehlende Klammern und Optional(...) statt Optional[...] zu wiederholen, bis sie verschwinden."
     },
     {
-      "en": "In OOP I learned to call helpers with `self.` and define them with `self`; a name without a prefix is local, and mutable class variables are shared across all instances.",
-      "zh": "在 OOP 中学会了调用辅助方法要加 `self.`，定义参数也要 `self`；不带前缀的名字是局部变量，可变的类变量会被所有实例共享。",
-      "de": "In OOP lernte ich, Hilfsmethoden mit `self.` aufzurufen und mit `self` zu definieren; Namen ohne Präfix sind lokal, und veränderliche Klassenvariablen werden von allen Instanzen geteilt."
+      "en": "I learned to analyze LeetCode problems by technique and data structure—prefix sums, difference arrays, two-pointers, sliding windows, monotonic stacks/queues, binary search, binary trees, DFS/BFS, union-find, and dynamic programming—instead of memorizing individual solutions.",
+      "zh": "我学会了按技巧和数据结构分析 LeetCode 题目——前缀和、差分数组、双指针、滑动窗口、单调栈/队列、二分查找、二叉树、DFS/BFS、并查集和动态规划——而不是死记单个题解。",
+      "de": "Ich habe gelernt, LeetCode-Aufgaben nach Technik und Datenstruktur zu analysieren – Präfixsummen, Differenz-Arrays, Zwei-Zeiger-Technik, Sliding Windows, monotone Stapel/Warteschlangen, binäre Suche, Binärbäume, DFS/BFS, Union-Find und dynamische Programmierung – statt einzelne Lösungen auswendig zu lernen."
     },
     {
-      "en": "I learned that type annotations require `Optional[X]` with square brackets, not `Optional(X)`; after repeating this seven times I finally corrected it deliberately.",
-      "zh": "类型注解要用方括号 `Optional[X]`，不是圆括号；这个错误我重复了 7 次，后来有意识地改正了。",
-      "de": "Typannotationen brauchen eckige Klammern wie `Optional[X]`, nicht runde; nach sieben Wiederholungen habe ich diesen Fehler schließlich bewusst korrigiert."
-    },
-    {
-      "en": "I learned concrete DSA patterns: prefix/difference arrays, sliding window, two pointers, monotonic stack/queue, binary-search boundaries, linked-list sentinels, tree DFS/BFS, backtracking, Union-Find, and Kruskal.",
-      "zh": "掌握了具体 DSA 套路：前缀和/差分、滑动窗口、双指针、单调栈/队列、二分边界、链表哨兵、树 DFS/BFS、回溯、并查集和 Kruskal。",
-      "de": "Ich lernte konkrete DSA-Muster: Präfix-/Differenz-Arrays, Sliding Window, Two Pointers, monotone Stacks/Queues, binäre Suchgrenzen, Linked-List-Sentinel, Baum-DFS/BFS, Backtracking, Union-Find und Kruskal."
+      "en": "I learned to avoid silently switching to other-language habits such as ++, and to verify pasted conditions and boundary directions so loops always make progress.",
+      "zh": "我学会了避免不自觉使用其他语言的写法（如 ++），并在复制粘贴条件或边界方向时核对清楚，确保循环一定能推进。",
+      "de": "Ich habe gelernt, nicht unbewusst Schreibweisen aus anderen Sprachen wie ++ zu verwenden und kopierte Bedingungen und Grenzrichtungen zu überprüfen, damit Schleifen immer Fortschritt machen."
     }
   ],
   "tools": {
