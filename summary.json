@@ -1,9 +1,47 @@
 {
   "updated": "2026-11-26",
-  "totalChats": 0,
+  "totalChats": 1,
   "headline": "",
   "learned": [],
-  "tools": {},
-  "topics": [],
-  "recent": []
+  "tools": {
+    "Claude": 1
+  },
+  "topics": [
+    {
+      "name": {
+        "en": "Python"
+      },
+      "count": 1
+    },
+    {
+      "name": {
+        "en": "Data structures & algorithms"
+      },
+      "count": 1
+    },
+    {
+      "name": {
+        "en": "LeetCode"
+      },
+      "count": 1
+    },
+    {
+      "name": {
+        "en": "OOP"
+      },
+      "count": 1
+    }
+  ],
+  "recent": [
+    {
+      "date": "2026-11-23",
+      "tool": "Claude",
+      "title": {
+        "en": "Learning Python & algorithms with an AI tutor (81 Q&As, 65 logged mistakes)",
+        "zh": "和 AI 导师一起学 Python 与算法（81 条问答、65 条错题）",
+        "de": "Python & Algorithmen mit einem KI-Tutor lernen (81 Fragen, 65 Fehler)"
+      },
+      "path": "chats/2026-11-23-python-algorithms-study-notes.md"
+    }
+  ]
 }
