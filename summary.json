@@ -2,40 +2,40 @@
   "updated": "2026-11-26",
   "totalChats": 1,
   "headline": {
-    "en": "I use an AI tutor to interrogate my own buggy LeetCode code and keep a structured study notebook. Over three weeks it helped me log 81 Q&As and 65 mistakes, and turn recurring errors into a review list.",
-    "zh": "我把 AI 当作导师，用来追问自己写的 LeetCode 代码、维护结构化学习笔记。三周里它帮我记录了 81 次问答和 65 个错误，并把反复出现的错误整理成复习清单。",
-    "de": "Ich nutze einen KI-Tutor, um meinen eigenen fehlerhaften LeetCode-Code zu hinterfragen und ein strukturiertes Lernnotizbuch zu führen. In drei Wochen half er mir, 81 Fragen und 65 Fehler zu protokollieren und wiederkehrende Fehler in eine Wiederholungsliste zu verwandeln."
+    "en": "I use AI as a demanding one-on-one tutor: I paste my own broken code and ask why, and it keeps a structured notebook of questions, mistakes, and weak spots. Across 81 Q&As and 65 logged mistakes, it helped me turn recurring Python/OOP errors into checklists and work through core LeetCode patterns.",
+    "zh": "我把 AI 当作严格的一对一导师：贴出自己写坏的代码并追问“为什么”，还让它维护结构化笔记，记录问题、错题和薄弱点。81 次问答、65 条错题记录中，它帮我把反复出现的 Python/OOP 错误变成检查清单，并系统过了一遍核心 LeetCode 模式。",
+    "de": "Ich nutze KI als strengen Einzeltutor: Ich füge meinen eigenen fehlerhaften Code ein und frage nach dem Warum, und sie führt ein strukturiertes Notizbuch mit Fragen, Fehlern und Schwachstellen. In 81 Q&As und 65 erfassten Fehlern half sie mir, wiederkehrende Python-/OOP-Fehler in Checklisten zu verwandeln und zentrale LeetCode-Muster durchzuarbeiten."
   },
   "learned": [
     {
-      "en": "I learned to ask “why” and paste my own buggy code instead of requesting finished answers, because that exposed my actual mental models.",
-      "zh": "我学会先问“为什么”，并贴出自己出错的代码，而不是直接要答案，这样能暴露我真正的思维模型。",
-      "de": "Ich habe gelernt, zuerst nach dem „Warum“ zu fragen und meinen eigenen fehlerhaften Code zu zeigen, statt fertige Lösungen zu verlangen, weil dadurch meine tatsächlichen Denkmodelle sichtbar werden."
+      "en": "Asking “why” instead of asking for finished code exposed my actual misconceptions; keeping a structured mistake log made recurring errors visible.",
+      "zh": "学会用“为什么”而不是直接要答案：贴自己的错误代码并让 AI 维护错题本，我才真正看到反复卡住的地方。",
+      "de": "Nach dem Warum zu fragen statt fertigen Code zu verlangen, legte meine tatsächlichen Missverständnisse offen; ein strukturiertes Fehlerlog machte wiederkehrende Fehler sichtbar."
     },
     {
-      "en": "I learned Python assignment semantics: `b = a` moves a name label, shallow copy creates a new container with shared elements, `list * n` copies references, and list `+=` mutates in place.",
-      "zh": "我学会了 Python 赋值的语义：`b = a` 是移动名字标签，浅拷贝是新容器共享元素，`list * n` 复制引用，列表 `+=` 原地修改。",
-      "de": "Ich habe die Semantik von Python-Zuweisungen gelernt: `b = a` verschiebt ein Namensetikett, flache Kopien erzeugen einen neuen Container mit geteilten Elementen, `list * n` kopiert Referenzen, und `+=` bei Listen verändert direkt."
+      "en": "I learned Python assignment and reference semantics: `=` rebinds a name, shallow copies create a new container with shared elements, and `list * n` copies references, not independent objects.",
+      "zh": "理解了 Python 赋值与引用语义：`=` 只是换名字/换地址，浅拷贝是新容器共享元素，`list * n` 复制的是引用而不是独立对象。",
+      "de": "Ich verstand Pythons Zuweisungs- und Referenzsemantik: `=` bindet nur einen Namen neu, flache Kopien erzeugen einen neuen Container mit geteilten Elementen, und `list * n` kopiert Referenzen statt unabhängiger Objekte."
     },
     {
-      "en": "I learned `self` and scope rules: methods need explicit `self`, nested functions do not take `self`, class variables are accessed via `self.` or the class name, and mutable class variables are shared across instances; type annotations use `Optional[TreeNode]`, not `Optional(TreeNode)`.",
-      "zh": "我学会了 `self` 和作用域规则：方法需要显式 `self`，嵌套函数不写 `self`，类变量要用 `self.` 或类名访问，可变的类变量会被实例共享；类型注解用 `Optional[TreeNode]` 而不是 `Optional(TreeNode)`。",
-      "de": "Ich habe `self`- und Gültigkeitsregeln gelernt: Methoden brauchen explizites `self`, verschachtelte Funktionen haben kein `self`, Klassenvariablen greift man über `self.` oder den Klassennamen zu, und veränderliche Klassenvariablen werden zwischen Instanzen geteilt; Typannotationen nutzen `Optional[TreeNode]`, nicht `Optional(TreeNode)`."
+      "en": "I learned that values changing each iteration must be initialized inside the loop, and I now check interval boundaries and off-by-one cases deliberately.",
+      "zh": "认识到每轮都会变化的量必须写在循环里；闭区间/左闭右开、最后下标与 range 终点等边界要专门核对。",
+      "de": "Ich lernte, dass sich pro Iteration ändernde Werte innerhalb der Schleife initialisiert werden müssen, und prüfe Intervallgrenzen und Off-by-one-Fälle jetzt bewusst."
     },
     {
-      "en": "I learned off-by-one and pointer discipline: decide whether intervals are closed or half-open, check where pointers stop when `while` exits, and keep variables that must change each round inside the loop.",
-      "zh": "我学会了边界与指针纪律：明确区间是闭区间还是左闭右开，检查 `while` 退出后指针停在哪里，每轮都要变化的变量必须写在循环里。",
-      "de": "Ich habe Off-by-one- und Zeigerdisziplin gelernt: klar festlegen, ob Intervalle geschlossen oder halboffen sind, prüfen, wo Zeiger nach dem `while` stehen, und Variablen, die sich jede Runde ändern müssen, in die Schleife schreiben."
+      "en": "In OOP I learned to call helpers with `self.` and define them with `self`; a name without a prefix is local, and mutable class variables are shared across all instances.",
+      "zh": "在 OOP 中学会了调用辅助方法要加 `self.`，定义参数也要 `self`；不带前缀的名字是局部变量，可变的类变量会被所有实例共享。",
+      "de": "In OOP lernte ich, Hilfsmethoden mit `self.` aufzurufen und mit `self` zu definieren; Namen ohne Präfix sind lokal, und veränderliche Klassenvariablen werden von allen Instanzen geteilt."
     },
     {
-      "en": "I learned a range of algorithmic patterns: prefix sums, difference arrays, sliding windows, two pointers, binary search boundaries, monotonic stacks/queues, union-find, backtracking, memoized DP, and tree traversal and construction.",
-      "zh": "我掌握了一系列算法模式：前缀和、差分数组、滑动窗口、双指针、二分边界、单调栈/队列、并查集、回溯、记忆化 DP、树的遍历与构造。",
-      "de": "Ich habe eine Reihe algorithmischer Muster gelernt: Präfixsummen, Differenzarrays, Sliding Windows, Zwei-Zeiger, binäre Suchgrenzen, monotone Stacks/Queues, Union-Find, Backtracking, memoisiertes DP sowie Baumtraversierung und -aufbau."
+      "en": "I learned that type annotations require `Optional[X]` with square brackets, not `Optional(X)`; after repeating this seven times I finally corrected it deliberately.",
+      "zh": "类型注解要用方括号 `Optional[X]`，不是圆括号；这个错误我重复了 7 次，后来有意识地改正了。",
+      "de": "Typannotationen brauchen eckige Klammern wie `Optional[X]`, nicht runde; nach sieben Wiederholungen habe ich diesen Fehler schließlich bewusst korrigiert."
     },
     {
-      "en": "I learned that keeping a mistake log and reviewing recurring weak spots works: repeated errors were counted across sessions, such as missing `self.` six times and writing the wrong annotation syntax seven times, making them explicit revision targets.",
-      "zh": "我学会了坚持维护错题本并复习薄弱点：同类错误被累计出来，例如漏 `self.` 六次、类型注解写错七次，让它们成为明确的复习目标。",
-      "de": "Ich habe gelernt, dass ein Fehlerprotokoll und das Wiederholen von Schwachstellen funktioniert: gleiche Fehler wurden über Sitzungen gezählt, z. B. fehlendes `self.` sechsmal und falsche Annotationssyntax siebenmal, wodurch sie klare Wiederholungsziele wurden."
+      "en": "I learned concrete DSA patterns: prefix/difference arrays, sliding window, two pointers, monotonic stack/queue, binary-search boundaries, linked-list sentinels, tree DFS/BFS, backtracking, Union-Find, and Kruskal.",
+      "zh": "掌握了具体 DSA 套路：前缀和/差分、滑动窗口、双指针、单调栈/队列、二分边界、链表哨兵、树 DFS/BFS、回溯、并查集和 Kruskal。",
+      "de": "Ich lernte konkrete DSA-Muster: Präfix-/Differenz-Arrays, Sliding Window, Two Pointers, monotone Stacks/Queues, binäre Suchgrenzen, Linked-List-Sentinel, Baum-DFS/BFS, Backtracking, Union-Find und Kruskal."
     }
   ],
   "tools": {
